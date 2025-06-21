@@ -95,3 +95,96 @@ A summary of each role and their responsibility in the project:
 
 - **Google Analytics / LogRocket**  
   Track user behavior and performance metrics.
+
+  --------------------------------
+  ## 🗃️ Database Design
+
+This section outlines the key data entities in the Airbnb Clone application and how they relate to each other.
+
+### 🔐 Users
+Represents both property owners (hosts) and renters (guests).
+
+**Fields:**
+- `id`: Unique identifier
+- `name`: Full name of the user
+- `email`: Email address (used for login)
+- `password_hash`: Encrypted password
+- `role`: Enum value (`host`, `guest`, or both)
+
+**Relationships:**
+- A user can list multiple properties (host)
+- A user can make multiple bookings (guest)
+- A user can write multiple reviews
+
+
+### 🏡 Properties
+Represents listings created by hosts.
+
+**Fields:**
+- `id`: Unique identifier
+- `title`: Property title (e.g., "Modern Apartment in Accra")
+- `description`: Full description of the property
+- `location`: Address or coordinates
+- `price_per_night`: Cost of booking per night
+- `host_id`: Foreign key referencing `Users.id`
+
+**Relationships:**
+- Each property is owned by one user (host)
+- A property can have many bookings
+- A property can have many reviews
+
+
+### 📅 Bookings
+Represents a reservation made by a guest.
+
+**Fields:**
+- `id`: Unique identifier
+- `guest_id`: Foreign key referencing `Users.id`
+- `property_id`: Foreign key referencing `Properties.id`
+- `check_in_date`: Start date of booking
+- `check_out_date`: End date of booking
+- `total_price`: Calculated total cost
+
+**Relationships:**
+- A booking is linked to one user (guest)
+- A booking is linked to one property
+
+
+### 📝 Reviews
+Feedback from guests about a property.
+
+**Fields:**
+- `id`: Unique identifier
+- `guest_id`: Foreign key referencing `Users.id`
+- `property_id`: Foreign key referencing `Properties.id`
+- `rating`: Numeric score (e.g., 1–5 stars)
+- `comment`: Written feedback
+- `created_at`: Timestamp
+
+**Relationships:**
+- A user can leave one review per booking
+- A property can have many reviews
+
+### 💳 Payments
+Tracks the financial transactions for bookings.
+
+**Fields:**
+- `id`: Unique identifier
+- `booking_id`: Foreign key referencing `Bookings.id`
+- `payment_date`: Date of transaction
+- `amount`: Amount paid
+- `status`: Payment status (`pending`, `completed`, `failed`)
+
+**Relationships:**
+- Each payment is linked to one booking
+- Each booking can have one associated payment
+
+### 🔄 Entity Relationships Summary
+
+- **Users** (1) ↔ (Many) **Properties**  
+- **Users** (1) ↔ (Many) **Bookings**  
+- **Properties** (1) ↔ (Many) **Bookings**  
+- **Properties** (1) ↔ (Many) **Reviews**  
+- **Users** (1) ↔ (Many) **Reviews**  
+- **Bookings** (1) ↔ (1) **Payments**
+
