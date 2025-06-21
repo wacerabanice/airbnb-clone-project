@@ -66,3 +66,36 @@ A summary of each role and their responsibility in the project:
 - Facilitates cooperation between development and operations teams
 - Builds continuous integration and continuous delivery (CI/CD) pipelines for faster delivery
 
+---------------------------------------------
+## 🧰 Technology Stack
+
+### 🌐 Frontend - Structure and style the layout of the website
+- **HTML5 & CSS3**  
+- **JavaScript (ES6+)**  
+- **React.js**  
+  
+### 🧪 Backend - runtime that lets you run JavaScript server-side. Express is a minimalist framework for creating RESTful APIs.In addition, used for rapid development and clean, secure architecture. While Restful APIs enable communication between the frontend and backend — used for listing properties, user authentication, and bookings.
+
+- **Node.js + Express.js** *(OR Python + Django)*  
+- **RESTful API** 
+- **GraphQL**
+
+### 🗄️ Database & Storage - storing of data 
+
+- **MongoDB** *(OR PostgreSQL)*  
+ - **Cloudinary or Amazon S3** *(Optional)*  
+ 
+### ⚙️ DevOps & Deployment
+
+- **Git & GitHub**   - Version control and collaboration
+- **Render / Railway / Netlify**  - Hosting platforms for deploying the frontend, backend, and database. Simplifies CI/CD 
+  - **Docker** - containerize the application, making development and deployment more consistent
+
+### 📊 Analytics & Monitoring *(Optional)* - Track user behavior and performance metrics
+
+- **Google Analytics / LogRocket**  
+  Track user behavior and performance metrics.
+
+---
+
+This stack is flexible — technologies like **Django vs Express** or **MongoDB vs PostgreSQL** can be chosen based on team preferences or performance needs.
