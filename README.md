@@ -214,3 +214,47 @@ Users can search listings by location, date, price range, and property type. Thi
 ### 🌐 Responsive Frontend
 The UI is designed to be responsive across devices using HTML, CSS, and React. It includes a clean, modern layout that reflects typical booking platforms and provides a smooth user experience.
 
+-----------------------
+## 🔐 API Security
+
+Securing backend APIs is a critical part of building a real-world application, especially one that handles sensitive user data, authentication, and financial transactions. Below are the key security measures that will be implemented in this project:
+
+### 🔑 Authentication
+The system will use secure login mechanisms (e.g., JWT or session-based authentication) to verify user identities. This ensures that only registered users can access protected routes like creating bookings or editing profiles.
+
+✅ *Why it's important:* Prevents unauthorized access to user accounts and protects private data.
+
+### 🛂 Authorization
+Role-based access control will be enforced to ensure that only users with appropriate permissions can perform specific actions (e.g., only a host can edit their property, not a guest).
+
+✅ *Why it's important:* Prevents privilege escalation and unauthorized operations that could compromise system integrity.
+
+
+### 🧱 Input Validation & Sanitization
+All user input will be validated and sanitized to protect against SQL injection, XSS (Cross-Site Scripting), and other injection attacks.
+
+✅ *Why it's important:* Prevents malicious input from being executed on the server or injected into the database.
+
+### ⏱️ Rate Limiting & Throttling
+Rate limiting middleware will be added to restrict the number of requests per user or IP address within a given time frame.
+
+✅ *Why it's important:* Prevents brute force attacks and protects the server from overload or abuse.
+
+
+### 🧊 HTTPS & Secure Cookies
+All API requests will be served over HTTPS in production, and cookies (if used) will be marked as `HttpOnly` and `Secure`.
+
+✅ *Why it's important:* Ensures data is encrypted in transit and helps mitigate session hijacking.
+
+
+### 💳 Secure Payment Handling
+For payment processing, integration with secure providers like Stripe will be used. Payment information is never stored on the server directly.
+
+✅ *Why it's important:* Protects users' financial data and ensures PCI compliance.
+
+### 📜 Logging & Monitoring
+Logs will be maintained for sensitive actions (e.g., failed login attempts, payments), and alerts will be configured for suspicious activity.
+
+✅ *Why it's important:* Enables quick detection of threats and auditing of system behavior.
+
+
