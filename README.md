@@ -257,4 +257,37 @@ Logs will be maintained for sensitive actions (e.g., failed login attempts, paym
 
 ✅ *Why it's important:* Enables quick detection of threats and auditing of system behavior.
 
+---------------------------------
+## ⚙️ CI/CD Pipeline
+
+**CI/CD** stands for **Continuous Integration** and **Continuous Deployment/Delivery**. It is a development practice that automates the process of testing, building, and deploying applications every time a change is made to the codebase.
+
+### 🛠️ Why It Matters
+
+Implementing a CI/CD pipeline ensures that:
+- Code changes are automatically tested and validated before reaching production.
+- Bugs are caught early, reducing the cost of fixing them.
+- Deployment is faster, safer, and more reliable.
+- The development workflow becomes smoother and more efficient — especially in collaborative teams.
+
+### 🔧 Tools Used
+
+The following tools can be integrated into this project to enable CI/CD:
+
+- **GitHub Actions**  
+  Automates workflows for testing, linting, and deploying the application every time changes are pushed to the repository.
+
+- **Docker**  
+  Containerizes the application to ensure consistent environments during development, testing, and production.
+
+- **Render / Railway / Netlify / Vercel**  
+  Platforms to automatically deploy frontend and backend apps whenever changes are pushed to the main branch.
+
+- **PostgreSQL/MongoDB Cloud Services**  
+  Database hosting that can be configured with environment variables during deployment.
+
+
+**Future Enhancements**  
+I plan to configure GitHub Actions to run automated tests and deploy the app using Docker containers. This ensures every code push goes through a quality gate before hitting production.
+
 
