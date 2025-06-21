@@ -95,7 +95,3 @@ A summary of each role and their responsibility in the project:
 
 - **Google Analytics / LogRocket**  
   Track user behavior and performance metrics.
-
----
-
-This stack is flexible — technologies like **Django vs Express** or **MongoDB vs PostgreSQL** can be chosen based on team preferences or performance needs.
