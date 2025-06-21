@@ -188,3 +188,32 @@ Tracks the financial transactions for bookings.
 - **Users** (1) ↔ (Many) **Reviews**  
 - **Bookings** (1) ↔ (1) **Payments**
 
+------------------------------
+## 🧩 Feature Breakdown
+
+This Airbnb Clone aims to replicate the core functionality of the Airbnb platform, allowing users to list, discover, and book short-term rental properties. Below is a breakdown of the primary features:
+
+### 👤 User Management
+Users can register, log in, and manage their profile. There are two roles: **hosts** (who list properties) and **guests** (who book them). Authentication and role-based access control ensure that users can only access relevant features.
+
+### 🏘️ Property Management
+Hosts can create, update, and delete property listings, including details like title, description, pricing, photos, and location. This feature allows hosts to showcase their offerings and manage availability.
+
+### 📅 Booking System
+Guests can search for properties by date and location, then make bookings by selecting their desired check-in and check-out dates. The system calculates total cost and ensures availability to prevent double bookings.
+
+### 🧾 Payment Integration
+After confirming a booking, guests proceed to make payments through a secure checkout process (Stripe or mock payment flow). This simulates a real-world transaction flow and stores payment status.
+
+### 📝 Reviews & Ratings
+Guests can leave reviews and rate properties after their stay. This encourages quality service and provides social proof for future renters, just like the core trust mechanism on Airbnb.
+
+### 🔍 Search & Filtering
+Users can search listings by location, date, price range, and property type. This enhances the user experience by helping them find the most relevant results quickly.
+
+### 🌐 Responsive Frontend
+The UI is designed to be responsive across devices using HTML, CSS, and React. It includes a clean, modern layout that reflects typical booking platforms and provides a smooth user experience.
+
+### 🧪 Admin Dashboard *(Optional)*
+An optional admin panel can be included for reviewing users, managing bookings, moderating reviews, or managing disputes — great for scaling the app in the future.
+
