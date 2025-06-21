@@ -214,6 +214,3 @@ Users can search listings by location, date, price range, and property type. Thi
 ### 🌐 Responsive Frontend
 The UI is designed to be responsive across devices using HTML, CSS, and React. It includes a clean, modern layout that reflects typical booking platforms and provides a smooth user experience.
 
-### 🧪 Admin Dashboard *(Optional)*
-An optional admin panel can be included for reviewing users, managing bookings, moderating reviews, or managing disputes — great for scaling the app in the future.
-
