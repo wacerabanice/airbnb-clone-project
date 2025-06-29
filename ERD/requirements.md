@@ -14,6 +14,18 @@
 📦 Data Models & Schemas
 
 1. 👤 User
+
+  | Attribute   | Type      | Constraints                                |
+|---------------|-----------|--------------------------------------------|
+| user_id       | UUID      | Primary Key, Indexed                       |
+| first_name    | VARCHAR   | NOT NULL                                   |
+| last_name     | VARCHAR   | NOT NULL                                   |
+| email         | VARCHAR   | UNIQUE, NOT NULL                           |
+| password_hash | VARCHAR   | NOT NULL                                   |
+| phone_number  | VARCHAR   | NULLABLE                                   |
+| role          | ENUM      | ('guest', 'host', 'admin'), NOT NULL       |
+| created_at    | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP                  |
+
 | Attribute       | Type                           | Constraints                 |
 | --------------- | ------------------------------ | --------------------------- |
 | `user_id`       | UUID (Primary Key, Indexed)    | Required                    |
@@ -47,16 +59,9 @@
 
 
 3. 📅 Booking
-| Attribute     | Type                                     | Constraints                        |
-| ------------- | ---------------------------------------- | ---------------------------------- |
-| `booking_id`  | UUID (Primary Key, Indexed)              | Required                           |
-| `property_id` | UUID (Foreign Key)                       | References `Property(property_id)` |
-| `user_id`     | UUID (Foreign Key)                       | References `User(user_id)`         |
-| `start_date`  | DATE                                     | NOT NULL                           |
-| `end_date`    | DATE                                     | NOT NULL                           |
-| `total_price` | DECIMAL                                  | NOT NULL                           |
-| `status`      | ENUM(`pending`, `confirmed`, `canceled`) | NOT NULL                           |
-| `created_at`  | TIMESTAMP                                | Default: CURRENT\_TIMESTAMP        |
+
+
+
 
 🔐 Constraints
 - Valid foreign keys to Property and User.
