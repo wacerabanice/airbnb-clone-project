@@ -1,6 +1,6 @@
 🚀 ### 🎨ERD (Entity-Relationship Diagram)
 
-![ERD](ERD/ER_Diagram_Airbnbcloneproject.drawio.png)
+![ERD](ER_Diagram_Airbnbcloneproject.drawio.png)
 
 ### Entities:
 
