@@ -7,7 +7,7 @@ The goal is to eliminate redundancy, ensure data integrity, and optimize perform
 
 ### 📘 First Normal Form (1NF)
 
-A table is in 1NF if:
+Database is in 1NF as:
 
 * All attributes contain only **atomic (indivisible)** values.
 * Each column contains values of a single type.
@@ -23,7 +23,7 @@ All tables (User, Property, Booking, Payment, Review, Message) use atomic attrib
 
 ### 📘 Second Normal Form (2NF)
 
-A table is in 2NF if:
+Database is in 2NF if:
 
 * It is in 1NF.
 * All **non-key attributes are fully functionally dependent** on the **entire primary key** (especially important for composite keys).
@@ -40,7 +40,7 @@ Examples:
 
 ### 📘 Third Normal Form (3NF)
 
-A table is in 3NF if:
+Database in 3NF as:
 
 * It is in 2NF.
 * **No transitive dependencies** (i.e., non-key attributes do not depend on other non-key attributes).
