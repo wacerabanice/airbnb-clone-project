@@ -15,16 +15,6 @@
 
 1. 👤 User
 
-  | Attribute   | Type      | Constraints                                |
-|---------------|-----------|--------------------------------------------|
-| user_id       | UUID      | Primary Key, Indexed                       |
-| first_name    | VARCHAR   | NOT NULL                                   |
-| last_name     | VARCHAR   | NOT NULL                                   |
-| email         | VARCHAR   | UNIQUE, NOT NULL                           |
-| password_hash | VARCHAR   | NOT NULL                                   |
-| phone_number  | VARCHAR   | NULLABLE                                   |
-| role          | ENUM      | ('guest', 'host', 'admin'), NOT NULL       |
-| created_at    | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP                  |
 
 | Attribute       | Type                           | Constraints                 |
 | --------------- | ------------------------------ | --------------------------- |
@@ -42,6 +32,7 @@
 - Role strictly defined as guest, host, or admin.
 
 2. 🏠 Property
+   
 | Attribute       | Type                        | Constraints                   |
 | --------------- | --------------------------- | ----------------------------- |
 | `property_id`   | UUID (Primary Key, Indexed) | Required                      |
@@ -61,6 +52,17 @@
 3. 📅 Booking
 
 
+| Field        | Type      | Constraints                                               |
+|--------------|-----------|-----------------------------------------------------------|
+| booking_id   | UUID      | Primary Key, Indexed                                      |
+| property_id  | UUID      | Foreign Key → Property(property_id), NOT NULL             |
+| user_id      | UUID      | Foreign Key → User(user_id), NOT NULL                     |
+| start_date   | DATE      | NOT NULL                                                  |
+| end_date     | DATE      | NOT NULL                                                  |
+| total_price  | DECIMAL   | NOT NULL                                                  |
+| status       | ENUM      | ('pending', 'confirmed', 'canceled'), NOT NULL            |
+| created_at   | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP                                 |
+
 
 
 🔐 Constraints
@@ -68,6 +70,7 @@
 - Status must strictly follow defined ENUM values.
 
 4. 💳 Payment
+   
 | Attribute        | Type                                    | Constraints                      |
 | ---------------- | --------------------------------------- | -------------------------------- |
 | `payment_id`     | UUID (Primary Key, Indexed)             | Required                         |
@@ -81,6 +84,7 @@
 - Payment method must be clearly specified.
 
 5. ⭐ Review
+   
 | Attribute     | Type                        | Constraints                         |
 | ------------- | --------------------------- | ----------------------------------- |
 | `review_id`   | UUID (Primary Key, Indexed) | Required                            |
@@ -95,6 +99,7 @@
 - Users must provide a comment.
 
 6. 💬 Message
+   
 | Attribute      | Type                        | Constraints                 |
 | -------------- | --------------------------- | --------------------------- |
 | `message_id`   | UUID (Primary Key, Indexed) | Required                    |
